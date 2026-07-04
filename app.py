@@ -3,10 +3,10 @@ import numpy as np
 import plotly.express as px
 import pandas as pd
 import pickle
-import matplotlib.pyplot as plt
+
 
 model = pickle.load(open("model1.pkl","rb"))
-sc = pickle.load(open("sc.pkl","rb"))
+
 
 
 df = pd.read_csv("Cleaned_data.csv")
@@ -202,8 +202,7 @@ if st.button("Predict"):
         glucose
     ]])
      
-    # scale only numerical columns
-    #input_data[:, [1, 5, 6, 7]] = sc.transform(input_data[:, [1, 5, 6, 7]])
+   
 
     prediction = model.predict(input_data)
     
